@@ -20,7 +20,7 @@
 // SolitaireApp
 
 BEGIN_MESSAGE_MAP(SolitaireApp, CWinAppEx)
-	ON_COMMAND(ID_APP_ABOUT, &SolitaireApp::OnAppAbout)
+	//_COMMAND(ID_APP_ABOUT, &SolitaireApp::OnAppAbout)
 	// Standard file based document commands
 	ON_COMMAND(ID_FILE_NEW, &CWinAppEx::OnFileNew)
 	ON_COMMAND(ID_FILE_OPEN, &CWinAppEx::OnFileOpen)
@@ -33,12 +33,9 @@ SolitaireApp::SolitaireApp() noexcept
 {
 	m_bHiColorIcons = TRUE;
 
-	// TODO: replace application ID string below with unique ID string; recommended
-	// format for string is CompanyName.ProductName.SubProduct.VersionInformation
-	SetAppID(_T("Solitaire.AppID.NoVersion"));
+	// Recommended format for string is CompanyName.ProductName.SubProduct.VersionInformation
+	SetAppID(_T("Rusty Smith.Solitaire.NoVersion"));
 
-	// TODO: add construction code here,
-	// Place all significant initialization in InitInstance
 }
 
 // The one and only SolitaireApp object
@@ -55,18 +52,9 @@ BOOL SolitaireApp::InitInstance()
 
 	EnableTaskbarInteraction(FALSE);
 
-	// AfxInitRichEdit2() is required to use RichEdit control
-	// AfxInitRichEdit2();
-
 	// Standard initialization
-	// If you are not using these features and wish to reduce the size
-	// of your final executable, you should remove from the following
-	// the specific initialization routines you do not need
-	// Change the registry key under which our settings are stored
-	// TODO: You should modify this string to be something appropriate
-	// such as the name of your company or organization
-	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
-	LoadStdProfileSettings(4);  // Load standard INI file options (including MRU)
+	SetRegistryKey(_T("Rusty Smith"));
+	//adStdProfileSettings(4);  // Load standard INI file options (including MRU)
 
 
 	InitContextMenuManager();
@@ -96,8 +84,6 @@ BOOL SolitaireApp::InitInstance()
 	CCommandLineInfo cmdInfo;
 	ParseCommandLine(cmdInfo);
 
-
-
 	// Dispatch commands specified on the command line.  Will return FALSE if
 	// app was launched with /RegServer, /Register, /Unregserver or /Unregister.
 	if (!ProcessShellCommand(cmdInfo))
@@ -112,44 +98,44 @@ BOOL SolitaireApp::InitInstance()
 // SolitaireApp message handlers
 
 
-// CAboutDlg dialog used for App About
-
-class CAboutDlg : public CDialogEx
-{
-public:
-	CAboutDlg() noexcept;
-
-// Dialog Data
-#ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_ABOUTBOX };
-#endif
-
-protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-
-// Implementation
-protected:
-	DECLARE_MESSAGE_MAP()
-};
-
-CAboutDlg::CAboutDlg() noexcept : CDialogEx(IDD_ABOUTBOX)
-{
-}
-
-void CAboutDlg::DoDataExchange(CDataExchange* pDX)
-{
-	CDialogEx::DoDataExchange(pDX);
-}
-
-BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
-END_MESSAGE_MAP()
-
-// App command to run the dialog
-void SolitaireApp::OnAppAbout()
-{
-	CAboutDlg aboutDlg;
-	aboutDlg.DoModal();
-}
+//// CAboutDlg dialog used for App About
+//
+//class CAboutDlg : public CDialogEx
+//{
+//public:
+//	CAboutDlg() noexcept;
+//
+//// Dialog Data
+//#ifdef AFX_DESIGN_TIME
+//	enum { IDD = IDD_ABOUTBOX };
+//#endif
+//
+//protected:
+//	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+//
+//// Implementation
+//protected:
+//	DECLARE_MESSAGE_MAP()
+//};
+//
+//CAboutDlg::CAboutDlg() noexcept : CDialogEx(IDD_ABOUTBOX)
+//{
+//}
+//
+//void CAboutDlg::DoDataExchange(CDataExchange* pDX)
+//{
+//	CDialogEx::DoDataExchange(pDX);
+//}
+//
+//BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+//END_MESSAGE_MAP()
+//
+//// App command to run the dialog
+//void SolitaireApp::OnAppAbout()
+//{
+//	CAboutDlg aboutDlg;
+//	aboutDlg.DoModal();
+//}
 
 // SolitaireApp customization load/save methods
 

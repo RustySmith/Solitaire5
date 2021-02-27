@@ -2,3 +2,5 @@ I created this project using the MFC template, and I selected the SDI option.
 There were many other options, and I tried to delete the features that I don't think I need. I DID include the the Document/View architecture, but I deleted toolbars and menus as well as print options. I also did not include the Restart feature. I was able to change the names of MainFrm to Board, Document to SaveResore, and View to Card. I was thinking I would have to do all of that after project creation.
 
 Project builds and runs. It has maximize and minimize buttons. It has a menu with File, Edit, View, and Help items. I will want to get rid of the menu items.
+
+In the SolitaireApp class, I don't think I should need the CommandLine functions. But if I comment them out, I get an exception.
